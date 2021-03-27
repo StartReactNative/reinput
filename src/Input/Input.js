@@ -19,7 +19,7 @@ export default class ReinputInput extends React.Component {
   static propTypes = { ...propTypes, ...TextInput.propTypes }
   static defaultProps = defaultProps
 
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -71,7 +71,7 @@ export default class ReinputInput extends React.Component {
 
   focus = () => this.ref && this.ref.focus()
 
-  render () {
+  render() {
     const { focused } = this.state
     const value = this.getValue()
     const hasValue = this.hasValueWithContent(value)
@@ -92,7 +92,7 @@ export default class ReinputInput extends React.Component {
             accessibilityLabel={this.props.accessibilityLabel || this.props.label}
             style={{ backgroundColor: this.props.backgroundColor }}
           >
-            <Label {...pickLabelProps({ ...this.props, hasValue, focused })} />
+            <Label {...pickLabelProps({ ...this.props, hasValue, focused })} labelWidth={this.props.labelWidth} labelStyle={this.props.labelStyle} hasTranslateX={this.props.hasTranslateX} />
             <Placeholder {...pickPlaceholderProps({ ...this.props, hasValue, focused })} />
             <TextInput
               {...pickTextInputProps(this.props)}

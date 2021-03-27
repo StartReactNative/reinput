@@ -1,12 +1,13 @@
 import pick from '../services/pick'
 import { BLUE } from '../services/constants'
 
-export const container = ({ top, translateY, scale }) => ({
+export const container = ({ top, translateY, scale, translateX }) => ({
   marginLeft: '-100%',
   position: 'absolute',
   top,
   transform: [
     { translateY },
+    { translateX },
     { scale }
   ],
   width: '200%'
