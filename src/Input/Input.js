@@ -94,6 +94,7 @@ export default class ReinputInput extends React.Component {
           >
             <Label {...pickLabelProps({ ...this.props, hasValue, focused })} labelWidth={this.props.labelWidth} labelStyle={this.props.labelStyle} hasTranslateX={this.props.hasTranslateX} />
             <Placeholder {...pickPlaceholderProps({ ...this.props, hasValue, focused })} />
+
             <TextInput
               {...pickTextInputProps(this.props)}
               onBlur={this.handleBlur}
@@ -105,10 +106,12 @@ export default class ReinputInput extends React.Component {
               style={styles.input(this.props, this.state.height, hasValue)}
               underlineColorAndroid='transparent'
               value={value}
+              secureTextEntry={this.props.secureTextEntry}
             />
             <Icon {...pickIconInternalProps(this.props)}
               icon={this.props.iconOverlay}
               overlay
+              hasTranslateX={this.props.hasTranslateX}
             />
           </View>
           <Underline {...pickUnderlineProps({ ...this.props, focused })} />

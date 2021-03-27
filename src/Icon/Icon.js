@@ -4,11 +4,11 @@ import { TouchableOpacity, View, Image } from 'react-native'
 import { propTypes, defaultProps } from './props'
 import * as styles from './styles'
 
-export function Container (props) {
+export function Container(props) {
   const { onPress } = props
   return onPress
-    ? <TouchableOpacity activeOpacity={1} {...props}/>
-    : <View pointerEvents="none" {...props} />
+    ? <TouchableOpacity activeOpacity={1} {...props} />
+    : <View  {...props} />
 }
 
 Container.propTypes = {
@@ -20,7 +20,7 @@ export default class ReinputIcon extends React.Component {
   static propTypes = propTypes
   static defaultProps = defaultProps
 
-  render () {
+  render() {
     const { icon, onPress } = this.props
     if (!icon) {
       return null
